@@ -1,0 +1,26 @@
+{
+  "name": "ta_veeb_saluste",
+  "version": "1.0.0",
+  "description": "2025 TA veeb",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://salustek@github.com/salustek/TA_veeb.git"
+  },
+  "keywords": [
+    "express.js",
+    "tlü"
+  ],
+  "author": "Kevin Saluste",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salustek/TA_veeb/issues"
+  },
+  "homepage": "https://github.com/salustek/TA_veeb#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
