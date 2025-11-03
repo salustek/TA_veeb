@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="et">
 <head>
   <meta charset="utf-8">
@@ -9,12 +10,15 @@
   <p>See leht on loodud veebiprogrammeerimise kursusel <a href="https://www.tlu.ee">Tallinna Ülikoolis</a> ning ei sislda tõsiseltvõetavat sisu!</p>
   <hr>
   <ul>
-	<li><a href="/timenow">Ajainfo</a></li>
-	<li><a href="/vanasonad">Vanasõnad</a></li>
-	<li><a href="/regvisit">Pane oma külastus kirja</a></li>
-  <li><a href="/kulastajad">Selle lehe külastajad</a></li>
-  <li><a href="/Eestifilm">Eesti filmid</a></li>
-  <li><a href="/galleryphotoupload">Galeriisse fotode üleslaadimine</a></li>
+	<li><a href="/">Avaleht</a></li>
+  </ul>
+  <hr>
+  <h2><%= heading %></h2>
+  <ul>
+    <!--   % märkidega on ejs kood muutujate näitamiseks -->
+	<% listData.forEach(function(listItem){ %>
+		<li><%= listItem %></li>
+	<% }); %>
   </ul>
 </body>
 </html>

@@ -1,0 +1,27 @@
+const express = require("express");
+const multer = require("multer");
+
+const router = express.Router();
+//seadistame vahevara fotode üleslaadimiseks
+const uploader = multer({dest:"./gallery/orig/"});
+
+//kontrollerid
+const {
+	photouploadPage,
+	photouploadPagePost,
+
+
+	} = require("../controllers/photouploadControllers");
+	
+
+router.route("/").get(photouploadPage);
+
+router.route("/").post(uploader.single("photoInput"), photouploadPagePost);
+
+
+module.exports = router;
+
+
+
+
+
