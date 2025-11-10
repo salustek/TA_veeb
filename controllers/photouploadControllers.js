@@ -31,11 +31,11 @@ const photouploadPagePost = async (req, res)=>{
 		console.log(fileName);
 		await fs.rename(req.file.path, req.file.destination + fileName)
 		//loon normaalsuuruse 800x600
-		await sharp(req.file.destination + fileName).resize(800,600).jpeg({quality: 90}).toFile("./gallery/normal" + fileName);
+		await sharp(req.file.destination + fileName).resize(800,600).jpeg({quality: 90}).toFile("./public/gallery/normal" + fileName);
 		//loon thumbnail pildi
-		await sharp(req.file.destination + fileName).resize(100,100).jpeg({quality: 90}).toFile("./gallery/thumbs" + fileName);
+		await sharp(req.file.destination + fileName).resize(100,100).jpeg({quality: 90}).toFile("./public/gallery/thumbs" + fileName);
 		conn = await mysql.createConnection(dbConf);
-		let sqlReq = "INSERT INTO galleryphotos (filename, origname, alttext, privacy, userid) VALUES(?,?,?,?,?)";
+		let sqlReq = "INSERT INTO GalleryPhotos (filename, origname, alttext, privacy, userid) VALUES(?,?,?,?,?)";
 		//kuna kasutajakontosid veel pole siis maarame userid = 1
 		const userId = 1;
 		const [result] = await conn.execute(sqlReq, [fileName, req.file.originalname, req.body.altInput, req.body.privacyInput, userId]);
